@@ -63,13 +63,12 @@ class GroupController extends Controller
         }
         $groups->pay=$sum;        
         $groups->save();
-         $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking   was
-           successful!! we are glad to have you as our visitors..your visit for the'.' '.$request->input('members').' '.'visitors will last for '.' '.$day.' '.'days at a cost of '.' '.$sum.' '.'ksh' .' '.'you can pay via mpesa this is our the till number 345786',$request->phone);
-         return redirect()->route('groups.index')->with('flash_message','ticket created successfully'.' '.'A text message for booking approval has been sent to your phone number'.' '.$request->input('phone'));
-    }
+       return redirect()->route(('groups.show'),$groups->id);
+        }
     public function show($id)
     {
         $groups = Group::findOrFail($id);
+        return $groups;
         return view('group.index', compact('groups'));
     }
     public function edit($id)
@@ -105,9 +104,7 @@ class GroupController extends Controller
         return redirect()->route('groups.index')->with('flash_message','booking successfully updated.'.' '.'A text message for
          edited ticket has been sent to your phone number'.' '.$request->input('phone'));
 
-        //  $this->sendMessage( 'your booking information 
-        //  of ticket number '.' '.$id.' '.'has been edited..your visit for the'.' '.$request->input('members').' '.'visitors will last for '.' 
-        //  '.$day.' '.'days at a cost of '.' '.$sum.' '.'ksh' .' '.'you can pay via mpesa this is our the till number 345786',$request->phone);
+       
     }
 // $this->dateDiff($request->input('check_in'),$request->input('check_out'));
     /**
