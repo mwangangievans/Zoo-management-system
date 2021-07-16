@@ -5,12 +5,7 @@
 @section('content')
 
 <div class="col-lg-10 col-lg-offset-1">
-  <h3 class="info">charges </h3>
-
-
-<button type="button" class="btn btn-primary non_printable" data-toggle="modal" data-target="#cost">
-  <h4 class="non_printable">Book for a group</h4>
-</button>
+  
 
 
 <div class="modal fade non_printable" id="cost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,13 +68,11 @@
                 </tr>
             </thead>
             <tbody>
-               
-
-                    @if (count($user->groupBooking) > 0)
-                    @foreach ($user->groupBooking as $group)
+                @if (count($groups) > 0)
+                    @foreach ( $groups as $group)
                         <tr>
                         <td>{{$group -> userGroup->name }}</td>
-                          <td>{{$group ->check_in }}</td>
+                            <td>{{$group ->check_in }}</td>
                             <td >{{$group ->check_out }}</td>
                             <td>{{$group ->phone}}</td>
                             <td>{{$group ->members}}</td>

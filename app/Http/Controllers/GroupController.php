@@ -17,9 +17,28 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $groups = Group::all();
-        return view('group.index')->with('groups', $groups);
+    { 
+    
+
+        $user = Auth::user();
+        if ($user->hasRole('Admin')) {
+
+            $groups = Group::all();
+            return view('group.admin')->with('groups', $groups);
+
+        } elseif ($user->hasRole('Staff')) {
+            $bookings = Booking::all();
+            
+            $groups = Group::all();
+            return view('group.admin')->with('groups', $groups);
+
+        } else {
+
+           $user = Auth::user();
+
+      
+          return view('group.index')->with('user',$user);
+        }
 
     }
 
@@ -68,8 +87,8 @@ class GroupController extends Controller
     public function show($id)
     {
         $groups = Group::findOrFail($id);
-        return $groups;
-        return view('group.index', compact('groups'));
+        // return $groups;
+        return view('group.show', compact('groups'));
     }
     public function edit($id)
     {

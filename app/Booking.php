@@ -17,6 +17,7 @@ class Booking extends Model
     public function userBooking(){
         return $this->belongsTo('app\User','user_id');
     }
+  
 }
 
-//bokking->userBooking <-- returns user who booked
+

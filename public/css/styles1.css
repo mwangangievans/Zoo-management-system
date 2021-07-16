@@ -6,6 +6,11 @@
     font-weight: 800;
     font-style: normal;
     color: yellow;
+}.hello{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
 }
 
 .wildlife {

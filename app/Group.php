@@ -12,4 +12,7 @@ class Group extends Model
     'check_out',
     'members'
 ];
+public function userGroup(){
+    return $this->belongsTo('app\User','user_id');
+}
 }
