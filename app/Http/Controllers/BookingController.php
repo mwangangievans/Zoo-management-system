@@ -117,8 +117,8 @@ class BookingController extends Controller
                             $booking->pay = ((int)$day * (int)($cost->local));
                         }
                     }
-                    return $booking;
-$booking->save();
+                  
+                      $booking->save();
         //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
         //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
         //    '.'days at a cost of '.' '.$sum.' '.'ksh',$request->phone);
