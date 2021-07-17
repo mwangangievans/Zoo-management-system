@@ -49,6 +49,8 @@ class CostController extends Controller
         $cost ->foreigner =$request->input('foreigner');
         $cost ->local =$request->input('local');
         $cost ->children =$request->input('children');
+
+        return $cost;
         $cost->save();
 
          return redirect()->route('costs.index')->with('flash_message','charges created successfully');

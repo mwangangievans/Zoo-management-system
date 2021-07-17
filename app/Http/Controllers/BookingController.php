@@ -74,6 +74,7 @@ class BookingController extends Controller
 
                     $costs = Cost::all();
                     $booking  = new Booking();
+                    $booking->user_id = Auth::User()->id;
 
         foreach ( $costs as $cost)
                 { 
@@ -90,7 +91,7 @@ class BookingController extends Controller
                     $date2=date_create($request->input('check_out'));
                     $diff=date_diff($date3,$date2);
                     $day = substr($diff->format("%R%a "),1);
-                    $booking->user_id = Auth::User()->id;
+                  
                     $booking ->phone =$request->input('phone');
                     $booking ->gender =$request->input('gender');
                     $booking ->age =$request->input('age');
