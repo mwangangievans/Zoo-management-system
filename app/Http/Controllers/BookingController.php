@@ -72,61 +72,60 @@ class BookingController extends Controller
 
         ]);
 
-        $date3=date_create($request->input('check_in'));
-        
-        // $date1 = new DateTime(date("Y-m-d"));
-        $date2=date_create($request->input('check_out'));
-        //get the difference between check out and check in
-        $diff=date_diff($date3,$date2);
-                //get the difference between now  and check in date
-        // $diff=date_diff($date1,$date3);
+                    $costs = Cost::all();
+                    $booking  = new Booking();
 
-        //return no. of days
-        $days = substr($diff->format("%R%a "),1);
-
-        // return $days.=" days";
-        // return "Today is " . date("Y-m-d");
-        $costs = Cost::all();
-        $booking  = new Booking();
-        $date3=date_create($request->input('check_in'));
-        $date2=date_create($request->input('check_out'));
-        $diff=date_diff($date3,$date2);
-        $day = substr($diff->format("%R%a "),1);
-        $booking->user_id = Auth::User()->id;
-        $booking ->phone =$request->input('phone');
-        $booking ->gender =$request->input('gender');
-        $booking ->age =$request->input('age');
-        $booking ->check_in=$request->input('check_in');
-        $booking ->check_out=$request->input('check_out');
-        $booking ->nationality =$request->input('nationality');
-        $booking-> Duration = $day;
         foreach ( $costs as $cost)
-    { 
-            if($request->input('nationality')==='foreigner'){
+                { 
+                    $date3=date_create($request->input('check_in'));
+                    
+                    $date2=date_create($request->input('check_out'));
+                    $diff=date_diff($date3,$date2);
+                    
+                    $days = substr($diff->format("%R%a "),1);
 
-            if($request->input('age') < 18)
-            {
-                $sum = ((int)$day * (int)($cost ->children));
+                
+                    
+                    $date3=date_create($request->input('check_in'));
+                    $date2=date_create($request->input('check_out'));
+                    $diff=date_diff($date3,$date2);
+                    $day = substr($diff->format("%R%a "),1);
+                    $booking->user_id = Auth::User()->id;
+                    $booking ->phone =$request->input('phone');
+                    $booking ->gender =$request->input('gender');
+                    $booking ->age =$request->input('age');
+                    $booking ->check_in=$request->input('check_in');
+                    $booking ->check_out=$request->input('check_out');
+                    $booking ->nationality =$request->input('nationality');
+                    $booking-> Duration = $day;
+                
+                     if($request->input('nationality')==='foreigner'){
+
+                        if($request->input('age') < 18)
+                        {
+                            $sum = ((int)$day * (int)($cost ->children));
+                                    }
+                                    else
+                                    {
+                                    $sum = ((int)$day * (int)($cost->foreigner));
+                                    }
+                                } 
+ 
+                        if($request->input('nationality')==='local')
+                        {
+                            if($request->input('age') < 18)
+                            {
+                            $sum = ((int)$day * (int)($cost ->children));
                         }
                         else
                         {
-                        $sum = ((int)$day * (int)($cost->foreigner));
+                            $sum = ((int)$day * (int)($cost->local));
                         }
-                    }  
-            if($request->input('nationality')==='local')
-            {
-                if($request->input('age') < 18)
-                {
-                $sum = ((int)$day * (int)($cost ->children));
-            }
-            else
-            {
-                $sum = ((int)$day * (int)($cost->local));
-            }
-          }
-          $booking->pay=$sum;        
-    }
-        
+                    }
+
+                }
+                $booking->pay=$sum;        
+
         $booking->save();
         //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
         //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
