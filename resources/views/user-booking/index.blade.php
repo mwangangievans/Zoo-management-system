@@ -125,7 +125,7 @@
                 @if (count($user->booking) > 0)
                     @foreach ($user->booking as $booking)
                         <tr>
-                        <td>{{$booking->userBooking->name}}</td>
+                            <td><a href="/bookings/{{$booking->id}}">{{$booking->userBooking->name}}</a></td>
                             <td >{{ $booking->check_in }}</td>
                             <td>{{ $booking->check_out}}</td>
                             <td>{{$booking->phone }}</td>

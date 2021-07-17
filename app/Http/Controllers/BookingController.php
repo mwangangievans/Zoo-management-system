@@ -118,8 +118,10 @@ class BookingController extends Controller
         }
         $booking->pay=$sum;        
         $booking->save();
-         $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was  successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' '.'days at a cost of '.' '.$sum.' '.'ksh',$request->phone);
-         return redirect()->route('bookings.index')->with('flash_message','ticket created successfully');
+        //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
+        //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
+        //    '.'days at a cost of '.' '.$sum.' '.'ksh',$request->phone);
+         return redirect()->route(('bookings.show'),$booking->id)->with('flash_message','ticket created successfully');
     }
 
 
@@ -131,7 +133,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        return view('booking.show', compact('booking'));
     }
 
     /**
@@ -194,7 +197,9 @@ class BookingController extends Controller
         }
         $booking->pay=$sum;        
         $booking->save();
-        $this->sendMessage( 'your booking information  of ticket number '.' '.$id.' '.'has been edited..your visit will last for '.' '.$day.' '.'days at a cost of '.' '.$sum.' '.'ksh' .' '.'you can pay via mpesa this is our the till number 345786',$request->phone);
+        // $this->sendMessage( 'your booking information  of ticket number '.' '.$id.' '.'has
+        //  been edited..your visit will last for '.' '.$day.' '.'days at a cost of '.' '.$sum.' '.'ksh' .' '.'you 
+        //  can pay via mpesa this is our the till number 345786',$request->phone);
 
         return redirect()->route('bookings.index')->with('flash_message','booking successfully updated.');
     }

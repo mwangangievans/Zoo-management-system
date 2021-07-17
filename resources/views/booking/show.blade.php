@@ -31,27 +31,29 @@
   <table class="table table-bordered">
       
     <tr>
-        <td><b><u>check-in dates</u></b></td>
-        <td><b><u>check-out dates</u></b></td>
-        <td><b><u>Contact Number</u></b></td>
-        <td><b><u>no of participants</u></b></td>
+        <td><b><u>Check in dates</u></b></td>
+        <td><b><u>Check out dates</u></b></td>
+        <td><b><u>phone</u></b></td>
+        <td><b><u>Age</u></b></td>
+        <td><b><u>Gender</u></b></td>
         <td><b><u>Duration in days</u></b></td>
         <td><b><u>charges in kenya sh</u></b></td>
-    </tr> 
-       <tr> 
-        <td>{{$groups ->check_in }}</td>
-         <td>{{$groups ->check_out }}</td>
-          <td>{{$groups ->phone}}</td> 
-          <td>{{$groups ->members}} </td> 
-        <td>{{$groups ->Duration}} </td> 
-        <td>{{$groups ->pay}} </td> 
+    </tr>   
 
-       
-     </tr>
-      
+        <tr>
+                <td >{{ $booking->check_in }}</td>
+                <td>{{ $booking->check_out}}</td>
+                <td>{{$booking->phone }}</td>
+                <td>{{$booking->age}}</td>
+                <td>{{$booking->gender }}</td>
+                <td>{{$booking->Duration }}</td>
+                <td>{{$booking->pay }}</td>
+        
+         </tr>
         </table>
+    </div>
 <div class="hello">
-<a href="{{ URL::to('/groups') }}" class="btn btn-success pull-right">back</a> 
+<a href="{{ URL::to('/bookings') }}" class="btn btn-success pull-right">back</a> 
 </div>
      
 

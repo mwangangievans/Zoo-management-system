@@ -11,7 +11,6 @@
         <table id="example" class="table table-bordered table-striped">
             <thead>
                 <tr class="wildlifeme">
-                     <th>ID</th>
                     <th>User Name</th>
                     <th >Check in</th>
                     <th >Check out</th>
@@ -29,8 +28,7 @@
                 <!-- @if (count($bookings) > 0) -->
                     @foreach ($bookings as $booking)
                     <tr>
-                            <td>{{$booking->id}}</td>
-                        <td>{{$booking->userBooking->name}}</td>
+                        <td>  <a href="/bookings/{{$booking->id}}">{{$booking->userBooking->name}}</a></td>
                             <td >{{ $booking->check_in }}</td>
                             <td>{{ $booking->check_out}}</td>
                             <td>{{$booking->phone }}</td>
