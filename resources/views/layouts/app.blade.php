@@ -120,12 +120,13 @@
                                         <a href="!#" > <h4 class="wildlife">Mombasa</h4>
                                     </li>
                                 </ul>
-                        </li>
-                            <li><a href="#about"><h4 class="wildlife">About Us</h4></a></li>
+                                <li><a href="#about"><h4 class="wildlife">About Us</h4></a></li>
                             <li><a href="#contact"><h4 class="wildlife">Contact</h4></a></li>
                             <li><a href="#mission"><h4 class="wildlife">Our Mission</h4></a></li>
                             <li><a href="{{ route('login') }}"><h4 class="wildlife">Login</h4></a></li>
                             <li><a href="{{ route('register') }}"><h4 class="wildlife">Register</h4></a></li>
+                        </li>
+                         
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
