@@ -100,34 +100,25 @@ class BookingController extends Controller
                     $booking ->nationality =$request->input('nationality');
                     $booking-> Duration = $day;
                 
-                     if($request->input('nationality')==='foreigner'){
-
-                        if($request->input('age') < 18)
+                     if($request->input('nationality')==='foreigner' || $request->input('age') < 18)
                         {
-                            $sum = ((int)$day * (int)($cost ->children));
+                            $booking->pay = ((int)$day * (int)($cost ->children));
                                     }
                                     else
-                                    {
-                                 $booking->pay = ((int)$day * (int)($cost->foreigner));
-                                    }
-                                } 
+                            $booking->pay = ((int)$day * (int)($cost->foreigner));
  
-                        if($request->input('nationality')==='local')
+                        if($request->input('nationality')==='local'|| $request->input('age') < 18)
                         {
-                            if($request->input('age') < 18)
-                            {
-                            $sum = ((int)$day * (int)($cost ->children));
+                        
+                            $booking->pay  = ((int)$day * (int)($cost ->children));
                         }
                         else
                         {
                             $booking->pay = ((int)$day * (int)($cost->local));
                         }
                     }
-
-                }
-                
-return $booking;
-                 $booking->save();
+                    return $booking;
+$booking->save();
         //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
         //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
         //    '.'days at a cost of '.' '.$sum.' '.'ksh',$request->phone);
@@ -204,7 +195,7 @@ return $booking;
              $sum = ((int)$day * (int)($cost->local));
          }
         }           
-        }
+        
         $booking->pay=$sum;        
         $booking->save();
         // $this->sendMessage( 'your booking information  of ticket number '.' '.$id.' '.'has
@@ -212,7 +203,9 @@ return $booking;
         //  can pay via mpesa this is our the till number 345786',$request->phone);
 
         return redirect()->route('bookings.index')->with('flash_message','booking successfully updated.');
+    
     }
+}
 
     /**
      * Remove the specified resource from storage.
