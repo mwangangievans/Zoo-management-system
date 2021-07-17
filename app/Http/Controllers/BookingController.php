@@ -101,25 +101,32 @@ class BookingController extends Controller
         $booking ->nationality =$request->input('nationality');
         $booking-> Duration = $day;
         foreach ( $costs as $cost)
-        {
-         if($request->input('nationality')==='foreigner'){
-         if($request->input('age') < 18){
-            $sum = ((int)$day * (int)($cost ->children));
-                    }
-                    else{
-                    $sum = ((int)$day * (int)($cost->foreigner));
-                    }
-                }  
-         if($request->input('nationality')==='local'){
-            if($request->input('age') < 18){
-            $sum = ((int)$day * (int)($cost ->children));
-         }else{
-             $sum = ((int)$day * (int)($cost->local));
-         }
-        }
-             
-        }
-        $booking->pay=$sum;  
+    { 
+            if($request->input('nationality')==='foreigner'){
+
+            if($request->input('age') < 18)
+            {
+                $sum = ((int)$day * (int)($cost ->children));
+                        }
+                        else
+                        {
+                        $sum = ((int)$day * (int)($cost->foreigner));
+                        }
+                    }  
+            if($request->input('nationality')==='local')
+            {
+                if($request->input('age') < 18)
+                {
+                $sum = ((int)$day * (int)($cost ->children));
+            }
+            else
+            {
+                $sum = ((int)$day * (int)($cost->local));
+            }
+          }
+          $booking->pay=$sum;        
+    }
+        
         $booking->save();
         //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
         //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
