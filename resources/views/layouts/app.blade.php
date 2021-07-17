@@ -104,7 +104,7 @@
                             
                         <!-- <a href="#about"><h4 class="wildlife">Camps</h4></a></li> -->
 
-                        <!-- <li class="dropdown">
+                        <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                    <h4 class="wildlife">Tour Camps</h4> <span class="caret"></span>
                                 </a>
@@ -120,7 +120,7 @@
                                         <a href="!#" > <h4 class="wildlife">Mombasa</h4>
                                     </li>
                                 </ul>
-                        </li> -->
+                        </li>
                             <li><a href="#about"><h4 class="wildlife">About Us</h4></a></li>
                             <li><a href="#contact"><h4 class="wildlife">Contact</h4></a></li>
                             <li><a href="#mission"><h4 class="wildlife">Our Mission</h4></a></li>
