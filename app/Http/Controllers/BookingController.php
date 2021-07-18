@@ -33,11 +33,11 @@ class BookingController extends Controller
 
         } else {
 
-           $costs = Cost::all();
+        //    $costs = Cost::all();
            $user = Auth::user();
         
       
-    return view('user-booking.index')->with('user','costs',$user,$costs);
+    return view('user-booking.index')->with('user',$user);
         }
     }
     
