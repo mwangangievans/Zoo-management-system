@@ -28,7 +28,7 @@ class CostController extends Controller
      */
     public function create()
     {
-                        return view('cost.create');
+         return view('cost.create');
 
     }
 

@@ -58,7 +58,9 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
+
 
         $costs = Cost::all();
         $groups  = new Group();
@@ -79,7 +81,7 @@ class GroupController extends Controller
         }
         $groups->save();
        return redirect()->route(('groups.show'),$groups->id);
-        }
+    }
     public function show($id)
     {
         $groups = Group::findOrFail($id);

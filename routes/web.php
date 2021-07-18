@@ -40,6 +40,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/costs','CostController');
 
 
+Route::resource('/nationality','NationalityController');
+
+
 Route::resource('/bookings','BookingController');
 
 Route::resource('/groups','GroupController');

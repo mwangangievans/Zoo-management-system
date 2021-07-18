@@ -35,7 +35,7 @@ class BookingController extends Controller
 
    
            $user = Auth::user();
-           
+         
       
     return view('user-booking.index')->with('user',$user);
         }
@@ -72,26 +72,20 @@ class BookingController extends Controller
             'nationality'      => 'required|string|max:255'
 
         ]);
+      
 
                     $costs = Cost::all();
                     $booking  = new Booking();
                     $booking->user_id = Auth::User()->id;
 
-        foreach ( $costs as $cost)
+                  foreach ( $costs as $cost)
                 { 
-                    $date3=date_create($request->input('check_in'));
-                    
-                    $date2=date_create($request->input('check_out'));
-                    $diff=date_diff($date3,$date2);
-                    
-                    $days = substr($diff->format("%R%a "),1);
-
-                
-                    
                     $date3=date_create($request->input('check_in'));
                     $date2=date_create($request->input('check_out'));
                     $diff=date_diff($date3,$date2);
                     $day = substr($diff->format("%R%a "),1);
+
+            
                   
                     $booking ->phone =$request->input('phone');
                     $booking ->gender =$request->input('gender');
@@ -118,7 +112,7 @@ class BookingController extends Controller
                             $booking->pay = ((int)$day * (int)($cost->local));
                         }
                     }
-                  
+                 
                       $booking->save();
         //  $this->sendMessage( 'Welcome to Big life Zoo Foundation your booking was
         //    successful!! we are glad to have you as our visitor..your visit will last'.' '.$days.' 
