@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
@@ -111,13 +114,13 @@
                    
                                <ul class="dropdown-menu" id="camps" role="menu">
                                     <li>
-                                        <a href="!#" > <h4 class="wildlife">Nairobi</h4>
+                                        <a href="/nairobi" > <h4 class="wildlife">Nairobi</h4>
                                     </li>
                                     <li>
-                                        <a href="!#" > <h4 class="wildlife">Kisumu</h4>
+                                        <a href="/kisumu" > <h4 class="wildlife">Kisumu</h4>
                                     </li>
                                     <li>
-                                        <a href="!#" > <h4 class="wildlife">Mombasa</h4>
+                                        <a href="/mombasa" > <h4 class="wildlife">Mombasa</h4>
                                     </li>
                                 </ul>
                                 <li><a href="#about"><h4 class="wildlife">About Us</h4></a></li>

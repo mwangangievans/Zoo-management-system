@@ -18,6 +18,20 @@ Route::get('/', function () {
  
      return view('wel');
 });
+Route::get('/nairobi', function () {
+ 
+     return view('nairobi');
+});
+
+Route::get('/kisumu', function () {
+ 
+     return view('kisumu');
+});
+
+Route::get('/mombasa', function () {
+ 
+     return view('mombasa');
+});
 
 Auth::routes();
 

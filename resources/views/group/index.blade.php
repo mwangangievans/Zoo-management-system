@@ -78,8 +78,6 @@
                     @if (count($user->groupBooking) > 0)
                     @foreach ($user->groupBooking as $group)
                         <tr>
-                        
-
                         <td><a href="/groups/{{$group->id}}">{{$group -> userGroup->name }}</a></td>
                           <td>{{$group ->check_in }}</td>
                             <td >{{$group ->check_out }}</td>
@@ -135,6 +133,7 @@
                     @endforeach
                 @else
                 <!-- @endif -->
+              
             </tbody>
 
         </table>
