@@ -35,6 +35,7 @@ class GroupController extends Controller
         } else {
 
            $user = Auth::user();
+           return $user->groupBooking;
           return view('group.index')->with('user',$user);
         }
 
