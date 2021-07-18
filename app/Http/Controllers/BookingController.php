@@ -35,7 +35,7 @@ class BookingController extends Controller
 
    
            $user = Auth::user();
-           return $user->booking;
+           
       
     return view('user-booking.index')->with('user',$user);
         }
