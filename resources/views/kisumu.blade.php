@@ -141,11 +141,19 @@ nav ul li + li + li {
 .content p {
   color: #333;
   line-height: 1.5;
+}.hello{
+  margin-top: 0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
     </style>
   </head>
   <body>
+  <div class="hello">
+        <a href="/"> <button class="btn btn-secondary"><h1>Go Back</h1></button></a>
+        </div>
     <div class="container">
       <div class="circle-container">
         <div class="circle">
@@ -159,6 +167,8 @@ nav ul li + li + li {
       </div>
 
       <div class="content">
+       
+       
         <h1>Amazing Camp Destinations in  kisumu</h1>
         <small>Kim Munyee Mku</small>
 <p>It’s never too late to have a life you love. <br>
@@ -167,7 +177,7 @@ nav ul li + li + li {
     It’s never, ever too late.</p> 
         <h3>Camp view</h3>
         <img src="https://images.pexels.com/photos/1309584/pexels-photo-1309584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="house" />
-<p>come and have fun and keep the memories</p>      </div>
+<p>come and have fun and keep the memories</p></div>
     </div>
    <script>
        const open = document.getElementById('open')
