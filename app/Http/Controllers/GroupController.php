@@ -58,27 +58,24 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        // $date3=date_create($request->input('check_in'));
-        // $date2=date_create($request->input('check_out'));
-        // $diff=date_diff($date3,$date2);     
-        // $days = substr($diff->format("%R%a "),1);
 
         $costs = Cost::all();
         $groups  = new Group();
+        $groups->user_id = Auth::User()->id;
+        foreach ( $costs as $cost){
+
         $date3=date_create($request->input('check_in'));
         $date2=date_create($request->input('check_out'));
         $diff=date_diff($date3,$date2);
         $day = substr($diff->format("%R%a "),1);
-        $groups->user_id = Auth::User()->id;
+     
         $groups ->phone =$request->input('phone');
         $groups ->check_in=$request->input('check_in');
         $groups ->check_out=$request->input('check_out');
         $groups ->members=$request->input('members');
         $groups-> Duration = $day;
-        foreach ( $costs as $cost){
-        $sum = ((int)$day * (int)(($cost ->children)/2 )*($request->input('members')));
+        $groups->pay = ((int)$day * (int)(($cost ->children)/2 )*($request->input('members')));
         }
-        $groups->pay=$sum;        
         $groups->save();
        return redirect()->route(('groups.show'),$groups->id);
         }
