@@ -160,13 +160,14 @@ nav ul li + li + li {
 
       <div class="content">
         <h1>Amazing Camp Destinations in  kisumu</h1>
-        <small>Florin Pop</small>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia in ratione dolores cupiditate, maxime aliquid impedit dolorem nam dolor omnis atque fuga labore modi veritatis porro laborum minus, illo, maiores recusandae cumque ipsa quos. Tenetur, consequuntur mollitia labore pariatur sunt quia harum aut. Eum maxime dolorem provident natus veritatis molestiae cumque quod voluptates ab non, tempore cupiditate? Voluptatem, molestias culpa. Corrupti, laudantium iure aliquam rerum sint nam quas dolor dignissimos in error placeat quae temporibus minus optio eum soluta cupiditate! Cupiditate saepe voluptates laudantium. Ducimus consequuntur perferendis consequatur nobis exercitationem molestias fugiat commodi omnis. Asperiores quia tenetur nemo ipsa.</p>
-
+        <small>Kim Munyee Mku</small>
+<p>It’s never too late to have a life you love. <br>
+  Don’t ever feel like you’ve missed the boat, don’t have what it takes or can’t achieve your dreams. <br>
+   Instead of removing your dreams, remove the doubts and fears keeping you from them. <br>
+    It’s never, ever too late.</p> 
         <h3>Camp view</h3>
         <img src="https://images.pexels.com/photos/1309584/pexels-photo-1309584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="house" />
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit libero deleniti rerum quo, incidunt vel consequatur culpa ullam. Magnam facere earum unde harum. Ea culpa veritatis magnam at aliquid. Perferendis totam placeat molestias illo laudantium? Minus id minima doloribus dolorum fugit deserunt qui vero voluptas, ut quia cum amet temporibus veniam ad ea ab perspiciatis, enim accusamus asperiores explicabo provident. Voluptates sint, neque fuga cum illum, tempore autem maxime similique laborum odio, magnam esse. Aperiam?</p>
-      </div>
+<p>come and have fun and keep the memories</p>      </div>
     </div>
    <script>
        const open = document.getElementById('open')

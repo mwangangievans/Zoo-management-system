@@ -134,17 +134,21 @@ nav ul li + li + li {
 
 .content h1 {
   margin: 0;
+ 
 }
 
 .content small {
-  color: #555;
+  color: green;
   font-style: italic;
 }
 
 .content p {
   color: #333;
   line-height: 1.5;
-}
+ 
+} .evans{
+      color:yellow;
+  }
 
     </style>
   </head>
@@ -163,19 +167,16 @@ nav ul li + li + li {
 
       <div class="content">
         <h1>Amazing Article mombasa</h1>
-        <small>Florin Pop</small>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia in ratione dolores cupiditate, maxime aliquid impedit dolorem nam dolor omnis atque fuga labore modi veritatis porro laborum minus, illo, maiores recusandae cumque ipsa quos. Tenetur, consequuntur mollitia labore pariatur sunt quia harum aut. Eum maxime dolorem provident natus veritatis molestiae cumque quod voluptates ab non, tempore cupiditate? Voluptatem, molestias culpa. Corrupti, laudantium iure aliquam rerum sint nam quas dolor dignissimos in error placeat quae temporibus minus optio eum soluta cupiditate! Cupiditate saepe voluptates laudantium. Ducimus consequuntur perferendis consequatur nobis exercitationem molestias fugiat commodi omnis. Asperiores quia tenetur nemo ipsa.</p>
-
-        <h3>My Dog</h3>
-        <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="doggy" />
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit libero deleniti rerum quo, incidunt vel consequatur culpa ullam. Magnam facere earum unde harum. Ea culpa veritatis magnam at aliquid. Perferendis totam placeat molestias illo laudantium? Minus id minima doloribus dolorum fugit deserunt qui vero voluptas, ut quia cum amet temporibus veniam ad ea ab perspiciatis, enim accusamus asperiores explicabo provident. Voluptates sint, neque fuga cum illum, tempore autem maxime similique laborum odio, magnam esse. Aperiam?</p>
-      </div>
+        <small class="evans">“The world is a book and those who do not travel read only one page.” ~ </small>
+<p>It is not the destination where you end up but the mishaps and memories you create along the way</p>
+        <h3>Overview</h3>
+        <img src="https://images.pexels.com/photos/5480740/pexels-photo-5480740.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="doggy" />
+        <h3>Overview</h3>
+        <img src="https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/static/optimized/rev-0404f4f/images/Best-Travel-Quotes-someday-be-free.jpg" alt="doggy" />
+<p>Live with no excuses and travel with no regrets</p>      
     </div>
-      <ul>
-        <li><i class="fas fa-location"></i> <a href="/">Nairobi</a> </li>
-        <li><i class="fas fa-user-alt"></i> About</li>
-        <li><i class="fas fa-envelope"></i> Contact</li>
-      </ul>
+    </div>
+
     </nav>
    <script>
        const open = document.getElementById('open')
